@@ -2,6 +2,7 @@
 ===
 
 本篇是一個總覽，會寫出動機、架構，與介紹後面篇章，並且放上最終成果在此。
+
 [TOC]
 
 一直以來有記錄薪水的習慣，最近正面臨工作轉換之際。剛好也想想學習一個新的後端語言，並建立一個練習Web應用，苦於找不到一個學習的目標。因此突發奇想，利用這個機會，學習如何開發一個完整的網站。因此才有了這篇文章，是做個記錄，也是留給未來的自己看看過往成長的歷程。
@@ -52,20 +53,14 @@
 [GoLang 前端框架排名](https://learnku.com/articles/37364)
 [GoLang 有哪一些好用的前端框架](https://www.zhihu.com/question/27370112)
 
-
-
-
 任務拆解
 ---
 
 1. [建立`GoLang`開發環境](/jJUH3Q5gSMSbkJWe0Wce6Q)
 2. [利用`GoLang`建立Web應用](/MizQKhXQSh2oUDkgS1d5Rg)
-https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.2
-4. 建立`PostgreSQL`開發環境
-5. 利用`GoLang`通過RESTFul API
-6. 調整架構爲Loading balance
-
-[link text][reference]
+3. 建立`PostgreSQL`開發環境
+4. 利用`GoLang`通過RESTFul API
+5. 調整架構爲Loading balance
 
 
 ###### tags: `Go` `GoLang` `Web` `DataBase`
@@ -78,3 +73,7 @@ https://segmentfault.com/a/1190000013297625
 
 Day7 | 使用 GoLang 與資料庫進行互動
 https://ithelp.ithome.com.tw/articles/10234657
+
+Go 建立一個簡單的 web 服務
+https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.2
+
