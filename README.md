@@ -56,11 +56,18 @@
 任務拆解
 ---
 
-1. [建立`GoLang`開發環境](/jJUH3Q5gSMSbkJWe0Wce6Q)
-2. [利用`GoLang`建立Web應用](/MizQKhXQSh2oUDkgS1d5Rg)
-3. 建立`PostgreSQL`開發環境
-4. 利用`GoLang`通過RESTFul API
-5. 調整架構爲Loading balance
+* [建立`GoLang`開發環境](/jJUH3Q5gSMSbkJWe0Wce6Q)
+* [利用`GoLang`建立Web應用](/MizQKhXQSh2oUDkgS1d5Rg)
+* 建立`PostgreSQL`環境
+* 利用`GoLang`調用DB
+* 利用Gin整合
+* 使用RestFul API實現調用DB(到這裏基本的網頁應該大致上成型了，再來就是開始練習結構化)
+* 進階與其他應用
+    * 調整架構爲Loading balance
+    * 導入測試 go test
+    * 開始自動化測試CI/CD
+    * 加上Swagger godocs
+    * 
 
 
 ###### tags: `Go` `GoLang` `Web` `DataBase`
@@ -77,3 +84,15 @@ https://ithelp.ithome.com.tw/articles/10234657
 Go 建立一個簡單的 web 服務
 https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.2
 
+
+
+
+```mermaid
+graph TD;
+
+subgraph 軟體架構
+Front-End:Gin --> Back-End:GoLang
+Back-End:GoLang -- API --> DataBase:PostgreSQL;
+end
+
+```
