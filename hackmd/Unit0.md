@@ -1,4 +1,4 @@
-0-從零開始學程式_實戰Web應用Go
+0-從零開始學程式，實戰Web 應用Go
 ===
 
 本篇是一個總覽，會寫出動機、架構，與介紹後面篇章，並且放上最終成果在此。
@@ -15,11 +15,9 @@
 2. 透過後端API進行資料交互
 3. 透過前端框架將頁面load出來
 
-
 需要練習：
 1. `cluster` or `loading balance + ngix`
 2. `GoLang`目錄結構化
-
 
 規格
 ---
@@ -33,15 +31,32 @@
 * Graphics：NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2
 * OS：Ubuntu 18.04 LTS
 
-
 ### 軟體
 
 資料庫可以使用`PostgreSQL`、`MongoDB`；後端語言可以選擇`GoLang`、`Node.JS`;前端框架基本上是依照後端的選擇，使用該語言最熱門的框架，這樣可以少走一點冤枉路。
+
+```mermaid
+graph TD;
+
+%% defined node
+
+Front-End[Front-End:Gin]
+Back-End[Back-End:GoLang]
+DataBase[DataBase:PostgreSQL]
+
+%% defined flow
+
+Back-End --> Front-End & DataBase
+%% Back-End --> DataBase;
+
+```
 
 話不多說，先上規格：
 * DataBase：`PostgreSQL`
 * Back-End：`GoLang`
 * Front-End：`Gin`
+
+#### 說明
 
 最終資料庫選擇`PostgreSQL`。一方面是開源的RDB，在未來在工作上使用機會可能也較多，另一方面是NoSQL的`MongoDB`過去工作已經用的比較熟悉了。所以就無腦選擇`PostgreSQL`作爲這次實驗的資料庫啦～
 
@@ -56,8 +71,9 @@
 任務拆解
 ---
 
-* [建立GoLang 開發環境](/jJUH3Q5gSMSbkJWe0Wce6Q)
-* [利用GoLang 建立Web應用](/MizQKhXQSh2oUDkgS1d5Rg)
+* [1-建立GoLang 開發環境](/jJUH3Q5gSMSbkJWe0Wce6Q)
+* [2-利用GoLang 建立Web 應用](/MizQKhXQSh2oUDkgS1d5Rg)
+* [3-實戰GoLang 建立Web 應用](/)
 * 建立`PostgreSQL`環境
 * 利用`GoLang`調用DB
 * 利用Gin整合
@@ -68,10 +84,11 @@
     * 導入測試 go test
     * 開始自動化測試CI/CD
     * 加上Swagger godocs
-    * 
-
 
 ###### tags: `Go` `GoLang` `Web` `DataBase`
+
+備用參考資料
+---
 
 go-developer-roadmap
 https://github.com/eddycjy/go-developer-roadmap
@@ -81,9 +98,6 @@ https://segmentfault.com/a/1190000013297625
 
 Day7 | 使用 GoLang 與資料庫進行互動
 https://ithelp.ithome.com.tw/articles/10234657
-
-Go 建立一個簡單的 web 服務
-https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.2
 
 項目結構
 
@@ -113,12 +127,4 @@ Repository 專門與資料庫進行操作
 Model 作為資料與 DAO 的 Mapping
 
 
-```mermaid
-graph TD;
 
-subgraph 軟體架構
-Front-End:Gin --> Back-End:GoLang
-Back-End:GoLang -- API --> DataBase:PostgreSQL;
-end
-
-```

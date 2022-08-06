@@ -1,4 +1,4 @@
-2-利用`GoLang`建立Web應用
+2-利用GoLang 建立Web 應用
 ===
 
 上篇簡單介紹了GoLang 的特性，並且建立了開發環境，已經可以開始編寫程式了。
@@ -11,7 +11,7 @@
 
 [TOC]
 
-### 如何建立一個簡單的Web應用
+### 如何建立一個簡單的Web 應用
 
 GoLang 提供了一個完善的Web 套件叫做net/http，透過這個套件可以很輕鬆的建立一個可執行的Web service。同時能簡單地對Web 路由、靜態檔案、模版、cookie 等資料進行設定和操作。
 
@@ -70,23 +70,7 @@ A：結果馬上就報錯:rolling_on_the_floor_laughing:。在執行代碼時，
 2022/08/06 14:08:58 ListenAndServe: listen tcp :80: bind: permission denied exit status 1
 ```
 
-
-> [Go 建立一個簡單的 web 服務](https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.2)
-
-
-### 
+> [Go 建立一個簡單的web 服務](https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.2)
 
 
 ###### tags: `Go` `GoLang` `Web`
-
-
-目錄結構可能會長這樣
-```bash
-gin-blog/
-├── conf            --
-├── middleware    --
-├── models
-├── pkg
-├── routers
-└── runtime
-```
