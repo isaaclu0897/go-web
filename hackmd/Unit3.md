@@ -102,6 +102,39 @@ Okey，小小練習不要一開始就把目標畫的太大，最後很快又要�
 ### 功能實作
 
 
+首頁搭建
 
+看來畫面跳轉只需要使用href標籤即可達到。
+
+原本認爲一個畫面的跳轉就要寫一次HTML，看來大家都是把要跳轉的地方全部寫在一起。也是懶惰
+
+```html
+      <ul>
+         <li>
+            <a href="/">Home</a>
+         </li>
+         <li>
+            <a href="/resume">Resume</a>
+         </li>
+         <li>
+            <a href="/project">Project</a>
+         </li>
+         <li>
+            <a href="/contact">Contact</a>
+         </li>
+      </ul>
+```
+
+目前開發遇到的問題：
+1. 一個頁面就必須寫一次HTML嗎？
+2. 如果一個頁面裏面跳轉的HTML寫錯怎麼辦？只能人工排查嗎？
+
+https://ithelp.ithome.com.tw/articles/10233981
+
+net/http套件詳解
+https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.4
+
+GoLang net/http offical
+https://pkg.go.dev/net/http#HandlerFunc.ServeHTTP
 
 ###### tags: `Go` `GoLang` `Web` 
