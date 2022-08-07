@@ -3,7 +3,9 @@
 
 上篇簡單粗暴地實現Web 應用，實際上感覺還不夠強烈，畢竟還是複製貼上別人的代碼比較多，還不如出個題目給自己實踐一下。
 
-針對我們的目標，會希望有個**首頁可以放些個人資訊**，有個**後臺頁面存放敏感資料**。
+另外，雖然完全沒有開發過Web 應用，不過在網上也看過很多人說開發時要導入MVC、RestFul之類的架構。雖然知道最終一定會導入架構，但不想爲了單純爲了技術而開發，所以透過練習開發Web 應用，感受一下在沒有架構的情況下開發，到底會有多不方便。這樣也可以很明確的瞭解這些架構、框架的導入到底有多重要。
+
+回到正題，針對我們的目標，會希望有個**首頁可以放些個人資訊**，有個**後臺頁面存放敏感資料**。
 
 ### 需求與目標
 
@@ -17,6 +19,8 @@
 
 對於user 來說，在一個Web 應用中，最重要的無非就是**頁面**、**動作**、**資料**。因此可以針對需求結合這三個元素畫成SA，如下圖。
 
+#### SA架構
+
 ```mermaid
 graph LR;
 
@@ -25,18 +29,25 @@ page_home(Home);
 page_login(Login);
 page_contact(Contact);
 page_resume(Resume);
+page_project(Project);
 page_admin(Admin);
-page_admin(Admin/);
+page_adminRoot(Admin);
+page_adminUserManagement(Admin/UserManagement);
 
 act_login([登入]);
-act_browser([訪客模式<br>瀏覽其他頁面]);
+act_userAdd([userAdd]);
+act_userDelete([userDelete]);
 
 data_usr&pwd[/賬號&密碼/];
 
 %% defined flow
-page_home --> act_browser;
+%% page_home --> act_browser;
+
+page_home --> page_contact & page_resume & page_project
 
 page_home -.- page_login --> data_usr&pwd --> act_login --> page_admin;
+
+page_adminRoot --> page_adminUserManagement --> act_userAdd & act_userDelete
 
 %% defined subgraph
 subgraph 圖例說明;
@@ -48,5 +59,31 @@ subgraph 圖例說明;
     b -.- c;
 end;
 ```
+
+Okey，小小練習不要一開始就把目標畫的太大，最後很快又要翻掉的(誤)。總之，雖然還有很多東西要完成，不過敏捷式學習吧～
+
+#### SA說明
+
+個人頁面應該會有**Home**、**Contact**、**Resume**、**Project**等頁面，裏面放上個人資訊等。另外有個不顯示在網頁上的頁面**Login**，用來登入後臺管理頁面。後臺管理頁面可以做到用戶管理。
+
+細部規劃
+* 實現Home、Contact、Resume、Project頁面，頁面之間可以相互跳轉
+    * Home：放上概覽
+    * Contact：放上聯絡資訊
+    * Resume：按照之前寫好CV的樣式，放上履歷
+    * Project：用表格？簡介一下side project
+* 實現可以登入後臺頁面
+    * Login頁面，不存在與首頁中。
+    * 在Login頁面中，輸入賬號密碼後，驗證通過可以跳轉至後臺
+* 後臺頁面實現用戶管理功能
+    * 預設有個最大admin賬號不能被刪除
+    * 用戶管理頁面顯示目前的用戶列表
+    * 實現新增、刪除用戶的功能
+
+不小心就列的太細了...沒關係，再來規劃一下怎麼實現吧～
+
+
+
+
 
 ###### tags: `Go` `GoLang` `Web` 
