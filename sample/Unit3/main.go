@@ -4,41 +4,25 @@ import (
 	"Unit3/tool"
 	"log"
 	"net/http"
+	"os"
 )
 
 func homePage(w http.ResponseWriter, _ *http.Request) {
-	var pageHTML string
-	pageHTML = `<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<body>
-
-<!-- Content will go here -->
-
-<h1>Hello ISAAC!</h1>
-
-</body>
-</html>
-`
+	var pageHTML []byte
+	pageHTML, err := os.ReadFile("html/home.html")
+	if err != nil {
+		log.Fatal("os.ReadFile: ", err)
+	}
 
 	w.Write([]byte(pageHTML))
 }
 
 func contactPage(w http.ResponseWriter, _ *http.Request) {
-	var pageHTML string
-	pageHTML = `<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<body>
-
-<!-- Content will go here -->
-
-<h1>Hello ISAAC! Contact</h1>
-
-</body>
-</html>
-`
-
+	var pageHTML []byte
+	pageHTML, err := os.ReadFile("html/contact.html")
+	if err != nil {
+		log.Fatal("os.ReadFile: ", err)
+	}
 	w.Write([]byte(pageHTML))
 
 }
