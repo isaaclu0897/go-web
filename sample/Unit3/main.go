@@ -7,8 +7,8 @@ import (
 )
 
 func homePage(w http.ResponseWriter, _ *http.Request) {
-	var homePageHTML string
-	homePageHTML = `<!DOCTYPE html>
+	var pageHTML string
+	pageHTML = `<!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
 <body>
@@ -21,11 +21,31 @@ func homePage(w http.ResponseWriter, _ *http.Request) {
 </html>
 `
 
-	w.Write([]byte(homePageHTML))
+	w.Write([]byte(pageHTML))
+}
+
+func contactPage(w http.ResponseWriter, _ *http.Request) {
+	var pageHTML string
+	pageHTML = `<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<body>
+
+<!-- Content will go here -->
+
+<h1>Hello ISAAC! Contact</h1>
+
+</body>
+</html>
+`
+
+	w.Write([]byte(pageHTML))
+
 }
 
 func main() {
 	http.HandleFunc("/", homePage)
+	http.HandleFunc("/contact", contactPage)
 
 	tool.Open("http://127.0.0.1:9453")
 
