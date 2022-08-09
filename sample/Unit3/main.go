@@ -23,13 +23,35 @@ func contactPage(w http.ResponseWriter, _ *http.Request) {
 	if err != nil {
 		log.Fatal("os.ReadFile: ", err)
 	}
-	w.Write([]byte(pageHTML))
 
+	w.Write([]byte(pageHTML))
+}
+
+func resumePage(w http.ResponseWriter, _ *http.Request) {
+	var pageHTML []byte
+	pageHTML, err := os.ReadFile("html/resume.html")
+	if err != nil {
+		log.Fatal("os.ReadFile: ", err)
+	}
+
+	w.Write([]byte(pageHTML))
+}
+
+func projectPage(w http.ResponseWriter, _ *http.Request) {
+	var pageHTML []byte
+	pageHTML, err := os.ReadFile("html/project.html")
+	if err != nil {
+		log.Fatal("os.ReadFile: ", err)
+	}
+
+	w.Write([]byte(pageHTML))
 }
 
 func main() {
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/contact", contactPage)
+	http.HandleFunc("/resume", resumePage)
+	http.HandleFunc("/project", projectPage)
 
 	tool.Open("http://127.0.0.1:9453")
 
