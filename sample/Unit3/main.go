@@ -2,6 +2,7 @@ package main
 
 import (
 	"Unit3/tool"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -18,13 +19,12 @@ func homePage(w http.ResponseWriter, _ *http.Request) {
 }
 
 func contactPage(w http.ResponseWriter, _ *http.Request) {
-	var pageHTML []byte
-	pageHTML, err := os.ReadFile("html/contact.html")
-	if err != nil {
-		log.Fatal("os.ReadFile: ", err)
-	}
-
-	w.Write([]byte(pageHTML))
+	tmpl := template.Must(template.ParseFiles("html/contact.html"))
+	tmpl.Execute(w, struct {
+		Title string
+	}{
+		"Contact",
+	})
 }
 
 func resumePage(w http.ResponseWriter, _ *http.Request) {
