@@ -125,8 +125,19 @@ Okey，小小練習不要一開始就把目標畫的太大，最後很快又要�
       </ul>
 ```
 
+html、css、js
+
+沒有css會怎樣
+
+什麼是前後端分離？網頁的前後端分離又是怎麼區分的？
+因爲所在公司的環境，我專門處理後臺，負責丟資料給前端。所以，一直以來都以爲所有的程式開發都是前後端分離（就是這麼的傻...身在福中不知福？）。如今才知道，最早的網頁其實只有後端工程師，負責在Server端編寫前後臺，再講資料完整丟給Client端。
+
+
+
+什麼是靜態網頁、什麼是動態網頁？
+
 目前開發遇到的問題：
-1. 一個頁面就必須寫一次HTML嗎？
+1. 一個頁面就必須寫一次HTML嗎？看起來是這樣的...只能說有些東西可以抽成模版
 2. 如果一個頁面裏面跳轉的HTML寫錯怎麼辦？只能人工排查嗎？
 
 https://ithelp.ithome.com.tw/articles/10233981
@@ -136,5 +147,8 @@ https://willh.gitbook.io/build-web-application-with-golang-zhtw/03.0/03.4
 
 GoLang net/http offical
 https://pkg.go.dev/net/http#HandlerFunc.ServeHTTP
+
+GoLang html/template offical
+https://pkg.go.dev/html/template
 
 ###### tags: `Go` `GoLang` `Web` 
